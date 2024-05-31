@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>клики и время
-    </title>
+    <title>Click Counter and Timer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
 </head>
 <body>
-    <h1></h1>
+    <h1>Click Counter and Timer</h1>
+    <p id="clicks">Количество кликов: 0</p>
+    <p id="time">Прошедшее время с запуска программы: 0:00:00</p>
+
+    <script>
+        var socket = io();
+
+        socket.on('update_clicks', function(data) {
+            document.getElementById('clicks').innerText = 'Количество кликов: ' + data.count;
+        });
+
+        socket.on('update_time', function(data) {
+            document.getElementById('time').innerText = 'Прошедшее время с запуска программы: ' + data.elapsed_time;
+        });
+    </script>
 </body>
 </html>
