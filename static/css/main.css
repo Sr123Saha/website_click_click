@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, 'Mister Brush';
+    margin: 8%;
+    padding: 2;
+    background: #59eb1f60;
+    color: #ff0000;
+}
+
+body {
+    font-family: 'Mister Brush', cursive;
+}
+
+@keyframes colorChange {
+    50% { color: rgb(243, 243, 243); }
+    50% { color: rgb(255, 0, 0); }
+    50% { color: rgb(0, 255, 0); }
+    50% { color: rgb(255, 0, 255); }
+    50% { color: rgb(255, 251, 0); }
+}
+
+.animated-color {
+    animation: colorChange 5s infinite;
+}
+
